@@ -34,12 +34,12 @@ CREATE TABLE user_roles (
     CONSTRAINT fk_user_roles_user
         FOREIGN KEY (user_id)
         REFERENCES users(id)
-        ON DELETE CASCADE,
+        ON DELETE CASCADE, //bị xóa user_roles cũng bị xóa theo
 
     CONSTRAINT fk_user_roles_role
         FOREIGN KEY (role_id)
         REFERENCES roles(id)
-        ON DELETE CASCADE
+        ON DELETE CASCADE //tương tự với role
 );
 
 INSERT INTO roles (name)
